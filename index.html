@@ -1,0 +1,2715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvel Electric - Premium Electrical Solutions</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #fbbf24;
+            --accent-color: #06b6d4;
+            --dark-color: #1e293b;
+            --light-color: #f0f9ff;
+            --text-dark: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #059669;
+            --danger-color: #dc2626;
+            --golden-color: #d97706;
+            --sky-blue: #0ea5e9;
+            --light-blue: #bae6fd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .top-bar {
+            background: linear-gradient(135deg, var(--dark-color), #334155);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Navigation */
+        .main-navbar {
+            background: linear-gradient(135deg, white 0%, var(--light-color) 100%);
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+            border-bottom: 3px solid var(--sky-blue);
+        }
+
+        .navbar-container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--sky-blue) !important;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            background: linear-gradient(135deg, var(--sky-blue), var(--accent-color));
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: 2rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem !important;
+            margin: 0 0.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--sky-blue) !important;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.15));
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            padding: 8px 40px 8px 16px;
+            width: 200px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--sky-blue);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--sky-blue);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #0284c7;
+        }
+
+        .cart-button {
+            background: linear-gradient(135deg, var(--secondary-color), var(--golden-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .cart-button:hover {
+            background: linear-gradient(135deg, var(--golden-color), #ea580c);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            background: white;
+            color: var(--secondary-color);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            background: linear-gradient(135deg, var(--light-blue), #e0f2fe);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .category-nav .container {
+            max-width: 1200px;
+        }
+
+        .category-links {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .category-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-link:hover,
+        .category-link.active {
+            color: var(--sky-blue);
+            background: white;
+            border-bottom-color: var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, #0284c7 50%, var(--accent-color) 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .lead {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--golden-color));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-hero-primary:hover {
+            background: linear-gradient(135deg, var(--golden-color), #ea580c);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(251, 191, 36, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-hero-secondary:hover {
+            background: white;
+            color: var(--sky-blue);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats {
+            background: linear-gradient(135deg, white 0%, var(--light-color) 100%);
+            color: var(--text-dark);
+            padding: 4rem 0;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: block;
+            background: linear-gradient(135deg, var(--sky-blue), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-section {
+            padding: 5rem 0;
+            background: var(--light-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+            border-top: 4px solid var(--sky-blue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--golden-color));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            color: var(--sky-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--sky-blue);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--sky-blue), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, #0284c7, #0891b2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: var(--sky-blue);
+            border: 2px solid var(--sky-blue);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-secondary-custom:hover {
+            background: var(--sky-blue);
+            color: white;
+        }
+
+        /* Equal height for product cards */
+        .product-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .product-item .card {
+            width: 100%;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--light-color), white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--dark-color), #334155);
+            color: white;
+        }
+
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--golden-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--secondary-color);
+            color: white;
+            box-shadow: 0 0 0 0.2rem rgba(251, 191, 36, 0.25);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 3rem 0 1rem;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .footer-content {
+            border-bottom: 1px solid #334155;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* ===== MODAL STYLES ===== */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--sky-blue), var(--accent-color));
+            color: white;
+            border: none;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .gallery-image:hover {
+            border-color: var(--sky-blue);
+            transform: scale(1.05);
+        }
+
+        .main-product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .specifications-table {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .specifications-table table {
+            width: 100%;
+            margin: 0;
+        }
+
+        .specifications-table th {
+            background: var(--sky-blue);
+            color: white;
+            padding: 0.8rem;
+            font-weight: 600;
+        }
+
+        .specifications-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            background: var(--success-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                margin: 1rem 0;
+            }
+
+            .navbar-actions {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            .search-input {
+                width: 150px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .product-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-links {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .category-link {
+                white-space: nowrap;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-container
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="bi bi-telephone"></i> +91 98765 43210</span>
+                <span><i class="bi bi-envelope"></i> info@harvelelectric.com</span>
+                <span><i class="bi bi-clock"></i> Mon-Sat: 9AM-7PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-navbar">
+        <div class="navbar-container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#home">
+                    <div class="brand-icon">⚡</div>
+                    <span>Harvel Electric</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="downloadPriceList()">Price List</a>
+                        </li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search products..." id="searchInput">
+                            <button class="search-btn" onclick="searchProducts()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                        <a href="#" class="cart-button" onclick="viewCart()">
+                            <i class="bi bi-cart3"></i>
+                            <span class="d-none d-sm-inline">Cart</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="container">
+            <div class="category-links">
+                <a href="#" class="category-link active" onclick="filterProducts('all')">
+                    <i class="bi bi-grid"></i> All Products
+                </a>
+                <a href="#" class="category-link" onclick="filterProducts('fans')">
+                    <i class="bi bi-fan"></i> Fans
+                </a>
+                <a href="#" class="category-link" onclick="filterProducts('cfl')">
+                    <i class="bi bi-lightbulb"></i> CFL Bulbs
+                </a>
+                <a href="#" class="category-link" onclick="filterProducts('geysers')">
+                    <i class="bi bi-thermometer-sun"></i> Geysers
+                </a>
+                <a href="#" class="category-link" onclick="filterProducts('others')">
+                    <i class="bi bi-lightning"></i> Electronics
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Premium Electrical Solutions<br><span style="color: #fbbf24;">Up To 50% Off</span></h1>
+                            <p class="lead">Discover our extensive range of high-quality electrical products including
+                                fans, lighting solutions, water heaters, and smart home electronics. Quality guaranteed,
+                                prices unmatched!</p>
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn-hero-primary">
+                                    <i class="bi bi-shop"></i> Shop Now
+                                </a>
+                                <a href="#contact" class="btn-hero-secondary">
+                                    <i class="bi bi-telephone"></i> Get Quote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="./public-main/hero.png"
+                            alt="Premium Ceiling Fan Collection" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">20+</span>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">50K+</span>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">1000+</span>
+                        <div class="stat-label">Products Available</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Customer Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Premium Products</h2>
+                <p class="section-subtitle">Explore our comprehensive collection of high-quality electrical products
+                    designed to meet all your home and business needs.</p>
+            </div>
+
+            <div class="row g-4" id="productGrid">
+                <!-- Fan Products -->
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg"
+                                alt="Premium Ceiling Fan">
+                            <div class="product-badge">22% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Ceiling Fans</div>
+                            <h5 class="product-title">Premium Ceiling Fan Deluxe</h5>
+                            <p class="product-description">High-performance ceiling fan with decorative design,
+                                energy-efficient motor, and remote control functionality.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹2,500</span>
+                                <span class="original-price">₹3,200</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan1')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Premium Ceiling Fan Deluxe', 2500)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/JISULIFE-Table-Fan-Pro-3-Turbo-Oscillating-Fan-with-Air-Purifier-3-8FMF0aMQE8SurcDD7jq0UvXXBruNN3.webp"
+                                alt="Smart Table Fan">
+                            <div class="product-badge">20% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Table Fans</div>
+                            <h5 class="product-title">Smart Table Fan Pro</h5>
+                            <p class="product-description">Portable table fan with adjustable speed settings,
+                                oscillation feature, and modern design.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹1,200</span>
+                                <span class="original-price">₹1,500</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan2')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Smart Table Fan Pro', 1200)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LouverBracket-UAK6YPXlMccGibp1XLNTOddiuRpOkK.webp"
+                                alt="Wall Mount Fan">
+                            <div class="product-badge">18% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Wall Fans</div>
+                            <h5 class="product-title">Wall Mount Fan Elite</h5>
+                            <p class="product-description">Space-saving wall mounted fan with remote control and
+                                adjustable tilt mechanism.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹1,800</span>
+                                <span class="original-price">₹2,200</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan3')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Wall Mount Fan Elite', 1800)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2865%29-XURlEbfDnCS4cLFMx4xpBDzFLxxODZ.jpeg"
+                                alt="Exhaust Fan">
+                            <div class="product-badge">21% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Exhaust Fans</div>
+                            <h5 class="product-title">Industrial Exhaust Fan</h5>
+                            <p class="product-description">Heavy-duty exhaust fan designed for kitchens, bathrooms, and
+                                industrial applications.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹950</span>
+                                <span class="original-price">₹1,200</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan4')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Industrial Exhaust Fan', 950)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2869%29-DgYMa1xPY8WoWQ37EhcZaKjtDLkP27.jpeg"
+                                alt="Golden Ceiling Fan">
+                            <div class="product-badge">25% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Ceiling Fans</div>
+                            <h5 class="product-title">Golden Ceiling Fan Premium</h5>
+                            <p class="product-description">Elegant golden finish ceiling fan with high-speed motor and
+                                decorative appeal.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹3,200</span>
+                                <span class="original-price">₹4,200</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan5')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Golden Ceiling Fan Premium', 3200)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="fans">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2868%29-6csohatFR4zSAvz3Q7S46fmOJvOZas.jpeg"
+                                alt="Brown Ceiling Fan">
+                            <div class="product-badge">20% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Ceiling Fans</div>
+                            <h5 class="product-title">Brown Ceiling Fan Classic</h5>
+                            <p class="product-description">Classic brown ceiling fan with robust build quality and
+                                efficient air circulation.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹2,800</span>
+                                <span class="original-price">₹3,500</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('fan6')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Brown Ceiling Fan Classic', 2800)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFL Products -->
+                <div class="col-lg-3 col-md-6 product-item" data-category="cfl">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spiral-cfl-lights.jpg-FgZ64nPTUT8Rye03vFOsmMzNq4qZMx.jpeg"
+                                alt="CFL Spiral">
+                            <div class="product-badge">25% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Energy Savers</div>
+                            <h5 class="product-title">CFL Spiral 20W Premium</h5>
+                            <p class="product-description">Energy-efficient spiral CFL bulb with warm white light and
+                                extended lifespan.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹150</span>
+                                <span class="original-price">₹200</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('cfl1')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('CFL Spiral 20W Premium', 150)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="cfl">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp"
+                                alt="CFL Tube Light">
+                            <div class="product-badge">20% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Tube Lights</div>
+                            <h5 class="product-title">CFL Tube Light 40W</h5>
+                            <p class="product-description">Bright tube light CFL perfect for offices, shops, and
+                                commercial spaces.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹280</span>
+                                <span class="original-price">₹350</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('cfl2')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom" onclick="addToCart('CFL Tube Light 40W', 280)">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="cfl">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images_55_f08e98d9-200b-47ae-8129-abfd20a86063-APNppwCMZOVSiIPfci0HAyPkgrp9ut.webp"
+                                alt="LED Tube Light">
+                            <div class="product-badge">30% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">LED Lights</div>
+                            <h5 class="product-title">LED Tube Light 18W</h5>
+                            <p class="product-description">Modern LED tube light with energy efficiency and long-lasting
+                                performance.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹350</span>
+                                <span class="original-price">₹500</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('cfl3')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom" onclick="addToCart('LED Tube Light 18W', 350)">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geyser Products -->
+                <div class="col-lg-3 col-md-6 product-item" data-category="geysers">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png"
+                                alt="Smart Electric Geyser">
+                            <div class="product-badge">15% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Electric Geysers</div>
+                            <h5 class="product-title">Smart Electric Geyser 15L</h5>
+                            <p class="product-description">Advanced electric geyser with digital temperature control and
+                                safety features.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹8,500</span>
+                                <span class="original-price">₹10,000</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('geyser1')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Smart Electric Geyser 15L', 8500)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 product-item" data-category="geysers">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp"
+                                alt="Premium Storage Geyser">
+                            <div class="product-badge">17% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Storage Geysers</div>
+                            <h5 class="product-title">Premium Storage Geyser 25L</h5>
+                            <p class="product-description">High-capacity storage geyser with advanced insulation for
+                                family use.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹12,000</span>
+                                <span class="original-price">₹14,500</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('geyser2')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Premium Storage Geyser 25L', 12000)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electronics Products -->
+                <div class="col-lg-3 col-md-6 product-item" data-category="others">
+                    <div class="card product-card">
+                        <div class="product-image">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp"
+                                alt="Smart Extension Board">
+                            <div class="product-badge">25% OFF</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Power Solutions</div>
+                            <h5 class="product-title">Smart Extension Board</h5>
+                            <p class="product-description">Advanced 6-socket extension board with surge protection and
+                                USB ports.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹450</span>
+                                <span class="original-price">₹600</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-primary-custom" onclick="showDetailedView('electronics1')">View
+                                    Details</button>
+                                <button class="btn-secondary-custom"
+                                    onclick="addToCart('Smart Extension Board', 450)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Harvel Electric?</h2>
+                <p class="section-subtitle">With over 20 years of experience in the electrical industry, we are
+                    committed to providing premium quality products and exceptional customer service.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h5 class="feature-title">Quality Assured</h5>
+                        <p class="feature-description">All our products come with comprehensive warranties and are
+                            tested for quality and durability.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h5 class="feature-title">Fast Delivery</h5>
+                        <p class="feature-description">Quick and reliable shipping across India with same-day delivery
+                            in major cities.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+                        <h5 class="feature-title">Best Prices</h5>
+                        <p class="feature-description">Competitive pricing with regular discounts and special offers for
+                            bulk purchases.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h5 class="feature-title">24/7 Support</h5>
+                        <p class="feature-description">Round-the-clock customer support and professional installation
+                            services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Contact Us</h2>
+                <p class="section-subtitle text-light">Get in touch with our expert team for any queries, support, or
+                    consultation regarding our electrical products.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h5>Visit Our Store</h5>
+                        <p>Harvel Electric Store<br>123 Electrical Market, Industrial Area<br>Phase-2, New Delhi -
+                            110020</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p>+91 98765 43210<br>+91 11 2345 6789</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:info@harvelelectric.com" class="text-white">info@harvelelectric.com</a><br>
+                            <a href="mailto:sales@harvelelectric.com" class="text-white">sales@harvelelectric.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Send us a Message</h4>
+                        <form onsubmit="sendEmail(event)">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Your Phone">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-hero-primary w-100">
+                                <i class="bi bi-send"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5>Harvel Electric</h5>
+                        <p>Your trusted partner for premium electrical solutions. Quality products, competitive prices,
+                            and exceptional service for over 20 years.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5>Quick Links</h5>
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#products" class="footer-link">Products</a>
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5>Product Categories</h5>
+                        <a href="#" class="footer-link" onclick="filterProducts('fans')">Fans</a>
+                        <a href="#" class="footer-link" onclick="filterProducts('cfl')">CFL Bulbs</a>
+                        <a href="#" class="footer-link" onclick="filterProducts('geysers')">Geysers</a>
+                        <a href="#" class="footer-link" onclick="filterProducts('others')">Electronics</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5>Customer Service</h5>
+                        <a href="#" class="footer-link" onclick="downloadPriceList()">Download Price List</a>
+                        <a href="#contact" class="footer-link">Support</a>
+                        <a href="#contact" class="footer-link">Installation Service</a>
+                        <a href="#contact" class="footer-link">Warranty</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/syeda-khadija-046aa2312"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Harvel Electric. All rights reserved. | Designed for excellence in electrical solutions
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img id="mainProductImage" class="main-product-image" src="/placeholder.svg"
+                                alt="Product Image">
+                            <div class="product-gallery" id="productGallery">
+                                <!-- Gallery images will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="productDetailContent">
+                                <!-- Product details will be populated by JavaScript -->
+                            </div>
+                            <div class="specifications-table">
+                                <h6 class="fw-bold mb-3">Technical Specifications</h6>
+                                <table class="table table-striped" id="specificationsTable">
+                                    <!-- Specifications will be populated by JavaScript -->
+                                </table>
+                            </div>
+                            <div class="mt-4">
+                                <h6 class="fw-bold mb-3">Key Features</h6>
+                                <ul class="features-list" id="featuresList">
+                                    <!-- Features will be populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn-primary-custom" onclick="addToCartFromDetailModal()">Add to
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let currentDetailProduct = null;
+        let cart = [];
+
+        // Product database with detailed information and correctly mapped images
+        const productDatabase = {
+            fan1: {
+                name: "Premium Ceiling Fan Deluxe",
+                price: 2500,
+                originalPrice: 3200,
+                category: "Ceiling Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2866%29-7me08zmhCCxc96fMIGk2YTPS7TcoOv.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2869%29-DgYMa1xPY8WoWQ37EhcZaKjtDLkP27.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2868%29-6csohatFR4zSAvz3Q7S46fmOJvOZas.jpeg"
+                ],
+                description: "Experience superior air circulation with our Premium Ceiling Fan Deluxe. This high-performance fan features an energy-efficient motor, decorative blade design, and remote control functionality for ultimate convenience.",
+                specifications: {
+                    "Motor Type": "BLDC (Brushless DC)",
+                    "Blade Material": "Aerodynamic ABS with UV Protection",
+                    "Sweep Size": "52 inches (1320mm)",
+                    "Speed Settings": "6 Variable Speeds",
+                    "Power Consumption": "28W (Maximum)",
+                    "Air Delivery": "230 CMM",
+                    "Noise Level": "< 35 dB",
+                    "Remote Control": "RF Remote with Timer",
+                    "Warranty": "5 Years Comprehensive",
+                    "Installation": "Professional Installation Included"
+                },
+                features: [
+                    "Advanced aerodynamic blade design for maximum air flow",
+                    "Whisper-quiet operation below 35dB noise level",
+                    "Energy-efficient BLDC motor with 5-star rating",
+                    "RF remote control with timer and speed memory",
+                    "Reversible motor for summer and winter operation",
+                    "Premium powder-coated finish resistant to rust",
+                    "Easy installation with professional mounting kit",
+                    "5-year comprehensive warranty with free service"
+                ]
+            },
+            fan2: {
+                name: "Smart Table Fan Pro",
+                price: 1200,
+                originalPrice: 1500,
+                category: "Table Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/JISULIFE-Table-Fan-Pro-3-Turbo-Oscillating-Fan-with-Air-Purifier-3-8FMF0aMQE8SurcDD7jq0UvXXBruNN3.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/JISULIFE-Table-Fan-Pro-3-Turbo-Oscillating-Fan-with-Air-Purifier-3-8FMF0aMQE8SurcDD7jq0UvXXBruNN3.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/maxresdefault.jpg-BiNoTFoYK0tnfLkemlorwYlDTEbQIL.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sf784a1129b7445299dcd784f7cceee35K.jpg-tyANFmvYrHqsTV2M3Db8ITWGASCmd8.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/JISULIFE-Table-Fan-Pro-3-Turbo-Oscillating-Fan-with-Air-Purifier-3-8FMF0aMQE8SurcDD7jq0UvXXBruNN3.webp"
+                ],
+                description: "Stay cool with our Smart Table Fan Pro featuring adjustable speed settings, oscillation feature, and modern design perfect for any room.",
+                specifications: {
+                    "Motor Type": "High-Efficiency AC Motor",
+                    "Blade Material": "Reinforced Polymer",
+                    "Blade Diameter": "16 inches (400mm)",
+                    "Speed Settings": "5 Touch Control Speeds",
+                    "Power Consumption": "45W (Maximum)",
+                    "Oscillation": "90° Automatic",
+                    "Connectivity": "WiFi 2.4GHz, Bluetooth 5.0",
+                    "App Control": "iOS & Android Compatible",
+                    "Timer Function": "1-8 Hours Programmable",
+                    "Warranty": "3 Years"
+                },
+                features: [
+                    "IoT connectivity with smartphone app control",
+                    "Voice command compatibility (Alexa, Google)",
+                    "Intelligent climate adaptation technology",
+                    "Touch control panel with LED indicators",
+                    "90-degree automatic oscillation",
+                    "Programmable timer with sleep mode",
+                    "Energy monitoring and usage statistics",
+                    "Compact design perfect for desks and tables"
+                ]
+            },
+            fan3: {
+                name: "Wall Mount Fan Elite",
+                price: 1800,
+                originalPrice: 2200,
+                category: "Wall Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LouverBracket-UAK6YPXlMccGibp1XLNTOddiuRpOkK.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LouverBracket-UAK6YPXlMccGibp1XLNTOddiuRpOkK.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2865%29-XURlEbfDnCS4cLFMx4xpBDzFLxxODZ.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LouverBracket-UAK6YPXlMccGibp1XLNTOddiuRpOkK.webp"
+                ],
+                description: "Save space with our Wall Mount Fan Elite featuring remote control and adjustable tilt mechanism for optimal air circulation.",
+                specifications: {
+                    "Motor Type": "Heavy-Duty Induction Motor",
+                    "Blade Material": "Metal with Anti-Corrosion Coating",
+                    "Blade Diameter": "18 inches (450mm)",
+                    "Speed Settings": "3 Pull Chain Speeds",
+                    "Power Consumption": "65W",
+                    "Oscillation": "180° Manual Adjustment",
+                    "Tilt Mechanism": "Multi-Directional",
+                    "Mounting": "Heavy-Duty Wall Bracket",
+                    "Protection": "IP44 Rated",
+                    "Warranty": "4 Years"
+                },
+                features: [
+                    "Commercial-grade heavy-duty construction",
+                    "Multi-directional tilt mechanism",
+                    "180-degree oscillation capability",
+                    "Corrosion-resistant metal blades",
+                    "Professional wall mounting system",
+                    "Pull chain speed control",
+                    "IP44 protection rating",
+                    "Suitable for indoor and covered outdoor use"
+                ]
+            },
+            fan4: {
+                name: "Industrial Exhaust Fan",
+                price: 950,
+                originalPrice: 1200,
+                category: "Exhaust Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2865%29-XURlEbfDnCS4cLFMx4xpBDzFLxxODZ.jpeg",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2865%29-XURlEbfDnCS4cLFMx4xpBDzFLxxODZ.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LouverBracket-UAK6YPXlMccGibp1XLNTOddiuRpOkK.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2865%29-XURlEbfDnCS4cLFMx4xpBDzFLxxODZ.jpeg"
+                ],
+                description: "Ensure proper ventilation with our Industrial Exhaust Fan designed for kitchens, bathrooms, and industrial applications.",
+                specifications: {
+                    "Motor Type": "Single Phase Induction",
+                    "Blade Material": "Galvanized Steel",
+                    "Blade Diameter": "12 inches (300mm)",
+                    "Air Flow Rate": "1200 CFM",
+                    "Power Consumption": "85W",
+                    "Noise Level": "< 45 dB",
+                    "Protection": "IP54 Rated",
+                    "Installation": "Wall/Window Mount",
+                    "Shutter Type": "Automatic Gravity",
+                    "Warranty": "3 Years Motor"
+                },
+                features: [
+                    "High-capacity air extraction (1200 CFM)",
+                    "Continuous duty motor for 24/7 operation",
+                    "Corrosion-resistant galvanized construction",
+                    "Automatic gravity shutters",
+                    "Low noise operation under 45dB",
+                    "Easy wall or window installation",
+                    "Moisture and dust resistant design",
+                    "Suitable for commercial and industrial use"
+                ]
+            },
+            fan5: {
+                name: "Golden Ceiling Fan Premium",
+                price: 3200,
+                originalPrice: 4200,
+                category: "Ceiling Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2869%29-DgYMa1xPY8WoWQ37EhcZaKjtDLkP27.jpeg",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2869%29-DgYMa1xPY8WoWQ37EhcZaKjtDLkP27.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2868%29-6csohatFR4zSAvz3Q7S46fmOJvOZas.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2866%29-7me08zmhCCxc96fMIGk2YTPS7TcoOv.jpeg"
+                ],
+                description: "Elegant golden finish ceiling fan with high-speed motor and decorative appeal perfect for luxury interiors.",
+                specifications: {
+                    "Motor Type": "High-Speed Induction Motor",
+                    "Blade Material": "Premium Metal with Golden Finish",
+                    "Sweep Size": "48 inches (1220mm)",
+                    "Speed Settings": "4 Variable Speeds",
+                    "Power Consumption": "75W (Maximum)",
+                    "Air Delivery": "220 CMM",
+                    "Finish": "Premium Golden Coating",
+                    "Remote Control": "Included",
+                    "Warranty": "5 Years Motor, 2 Years Finish",
+                    "Installation": "Professional Required"
+                },
+                features: [
+                    "Premium golden finish for luxury appeal",
+                    "High-speed motor for maximum air circulation",
+                    "Decorative design suitable for modern homes",
+                    "Remote control with multiple speed settings",
+                    "Corrosion-resistant golden coating",
+                    "Balanced blades for vibration-free operation",
+                    "Energy-efficient performance",
+                    "Professional installation included"
+                ]
+            },
+            fan6: {
+                name: "Brown Ceiling Fan Classic",
+                price: 2800,
+                originalPrice: 3500,
+                category: "Ceiling Fans",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2868%29-6csohatFR4zSAvz3Q7S46fmOJvOZas.jpeg",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2868%29-6csohatFR4zSAvz3Q7S46fmOJvOZas.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2869%29-DgYMa1xPY8WoWQ37EhcZaKjtDLkP27.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2867%29-s7IcmQopL4A1gyL0fnAJeFHnpc1Emn.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2866%29-7me08zmhCCxc96fMIGk2YTPS7TcoOv.jpeg"
+                ],
+                description: "Classic brown ceiling fan with robust build quality and efficient air circulation for traditional and modern homes.",
+                specifications: {
+                    "Motor Type": "Robust Induction Motor",
+                    "Blade Material": "High-Grade Metal with Brown Finish",
+                    "Sweep Size": "52 inches (1320mm)",
+                    "Speed Settings": "3 Pull Chain Speeds",
+                    "Power Consumption": "70W (Maximum)",
+                    "Air Delivery": "210 CMM",
+                    "Finish": "Classic Brown Coating",
+                    "Mounting": "Down Rod Mount",
+                    "Warranty": "4 Years Motor",
+                    "Installation": "Standard Installation"
+                },
+                features: [
+                    "Classic brown finish for traditional appeal",
+                    "Robust motor for long-lasting performance",
+                    "High-grade metal construction",
+                    "Pull chain speed control system",
+                    "Suitable for both traditional and modern decor",
+                    "Efficient air circulation design",
+                    "Easy maintenance and cleaning",
+                    "Standard installation process"
+                ]
+            },
+            cfl1: {
+                name: "CFL Spiral 20W Premium",
+                price: 150,
+                originalPrice: 200,
+                category: "Energy Savers",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spiral-cfl-lights.jpg-FgZ64nPTUT8Rye03vFOsmMzNq4qZMx.jpeg",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spiral-cfl-lights.jpg-FgZ64nPTUT8Rye03vFOsmMzNq4qZMx.jpeg",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/png-transparent-incandescent-light-bulb-compact-fluorescent-lamp-led-lamp-light-light-fixture-lamp-led-lamp-thumbnail-ClFuTBgSC8btlxJsmGciqkommIq1kW.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/spiral-cfl-lights.jpg-FgZ64nPTUT8Rye03vFOsmMzNq4qZMx.jpeg"
+                ],
+                description: "Save energy with our CFL Spiral 20W Premium featuring warm white light and extended lifespan for efficient lighting.",
+                specifications: {
+                    "Wattage": "20W",
+                    "Equivalent Incandescent": "100W",
+                    "Luminous Flux": "1200 Lumens",
+                    "Color Temperature": "2700K (Warm White)",
+                    "Base Type": "E27 (Standard Screw)",
+                    "Lifespan": "10,000 Hours",
+                    "Energy Efficiency": "5 Star Rating",
+                    "Mercury Content": "< 2.5mg (RoHS Compliant)",
+                    "Instant Start": "< 1 Second",
+                    "Warranty": "2 Years"
+                },
+                features: [
+                    "80% energy savings compared to incandescent",
+                    "10,000-hour extended lifespan guarantee",
+                    "Instant start technology (< 1 second)",
+                    "Advanced phosphor coating for consistent light",
+                    "Mercury-free eco-friendly technology",
+                    "Flicker-free operation",
+                    "Universal E27 base compatibility",
+                    "5-star energy efficiency rating"
+                ]
+            },
+            cfl2: {
+                name: "CFL Tube Light 40W",
+                price: 280,
+                originalPrice: 350,
+                category: "Tube Lights",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images_55_f08e98d9-200b-47ae-8129-abfd20a86063-APNppwCMZOVSiIPfci0HAyPkgrp9ut.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/png-transparent-incandescent-light-bulb-compact-fluorescent-lamp-led-lamp-light-light-fixture-lamp-led-lamp-thumbnail-ClFuTBgSC8btlxJsmGciqkommIq1kW.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp"
+                ],
+                description: "Bright and efficient lighting for offices and commercial spaces with our CFL Tube Light 40W featuring cool daylight.",
+                specifications: {
+                    "Wattage": "40W",
+                    "Equivalent Fluorescent": "40W T12",
+                    "Luminous Flux": "2800 Lumens",
+                    "Color Temperature": "6500K (Cool Daylight)",
+                    "Base Type": "2G11 (4-Pin)",
+                    "Tube Length": "22 inches (560mm)",
+                    "Lifespan": "12,000 Hours",
+                    "Power Factor": "> 0.95",
+                    "Flicker Rate": "< 1%",
+                    "Warranty": "3 Years Commercial"
+                },
+                features: [
+                    "Commercial-grade 12,000-hour lifespan",
+                    "Flicker-free operation (< 1% flicker)",
+                    "Cool daylight for enhanced productivity",
+                    "Instant start with no warm-up time",
+                    "High power factor (> 0.95)",
+                    "Uniform light distribution",
+                    "Mercury-free eco-friendly design",
+                    "Compatible with standard ballasts"
+                ]
+            },
+            cfl3: {
+                name: "LED Tube Light 18W",
+                price: 350,
+                originalPrice: 500,
+                category: "LED Lights",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images_55_f08e98d9-200b-47ae-8129-abfd20a86063-APNppwCMZOVSiIPfci0HAyPkgrp9ut.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images_55_f08e98d9-200b-47ae-8129-abfd20a86063-APNppwCMZOVSiIPfci0HAyPkgrp9ut.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/light-bulb-cfl-500x500-13Y4buY90hsTGesalEmfdAqdSAOl8d.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/png-transparent-incandescent-light-bulb-compact-fluorescent-lamp-led-lamp-light-light-fixture-lamp-led-lamp-thumbnail-ClFuTBgSC8btlxJsmGciqkommIq1kW.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images_55_f08e98d9-200b-47ae-8129-abfd20a86063-APNppwCMZOVSiIPfci0HAyPkgrp9ut.webp"
+                ],
+                description: "Modern LED tube light with energy efficiency and long-lasting performance for contemporary lighting needs.",
+                specifications: {
+                    "Wattage": "18W",
+                    "Equivalent Fluorescent": "36W T8",
+                    "Luminous Flux": "1800 Lumens",
+                    "Color Temperature": "6000K (Cool White)",
+                    "Base Type": "G13 (Bi-Pin)",
+                    "Tube Length": "4 feet (1200mm)",
+                    "Lifespan": "25,000 Hours",
+                    "Power Factor": "> 0.9",
+                    "CRI": "> 80",
+                    "Warranty": "3 Years"
+                },
+                features: [
+                    "50% energy savings over traditional fluorescent",
+                    "25,000-hour extended lifespan",
+                    "Instant on/off with no flickering",
+                    "High color rendering index (CRI > 80)",
+                    "Mercury-free and eco-friendly",
+                    "Direct replacement for T8 fluorescent",
+                    "Uniform light distribution",
+                    "Low heat generation"
+                ]
+            },
+            geyser1: {
+                name: "Smart Electric Geyser 15L",
+                price: 8500,
+                originalPrice: 10000,
+                category: "Electric Geysers",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp"
+                ],
+                description: "Experience the future of water heating with our Smart Electric Geyser 15L Pro. This intelligent water heater features advanced digital controls, energy optimization, and smartphone connectivity for the ultimate in convenience and efficiency.",
+                specifications: {
+                    "Capacity": "15 Liters",
+                    "Heating Element": "Incoloy 800 (2000W)",
+                    "Tank Material": "Stainless Steel 316L",
+                    "Insulation": "CFC-Free Polyurethane",
+                    "Temperature Range": "25°C to 75°C",
+                    "Heating Time": "15-20 Minutes",
+                    "Energy Rating": "5 Star BEE",
+                    "Pressure Rating": "8 Bar",
+                    "Safety Features": "Multi-Function Valve",
+                    "Warranty": "7 Years Tank, 4 Years Element"
+                },
+                features: [
+                    "Smart digital temperature control",
+                    "Smartphone app connectivity",
+                    "Energy optimization algorithms",
+                    "Advanced safety sensors",
+                    "Stainless steel 316L tank",
+                    "CFC-free insulation technology",
+                    "Multi-function safety valve",
+                    "7-year comprehensive warranty"
+                ]
+            },
+            geyser2: {
+                name: "Premium Storage Geyser 25L",
+                price: 12000,
+                originalPrice: 14500,
+                category: "Storage Geysers",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/i-zone-Geyser-Twin-Elec-Gas-55GLN-Supreme-Metallic-D89sEvFxbZQNxti29Q2Ek5yjqu7UcP.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NG-2025-storage-geyser-1.jpg-FddNuQ05EzNXPG5K24wKUvfHwuBbhl.png"
+                ],
+                description: "Meet your family's hot water needs with our Premium Storage Geyser 25L. This high-capacity water heater combines advanced insulation technology with corrosion-resistant construction for reliable, long-lasting performance.",
+                specifications: {
+                    "Capacity": "25 Liters",
+                    "Heating Element": "Incoloy 800 (2500W)",
+                    "Tank Material": "Vitreous Enamel Coated",
+                    "Insulation": "High-Density PUF",
+                    "Temperature Range": "30°C to 75°C",
+                    "Heating Time": "25-30 Minutes",
+                    "Energy Rating": "4 Star BEE",
+                    "Pressure Rating": "8 Bar",
+                    "Anode Rod": "Magnesium Sacrificial",
+                    "Warranty": "7 Years Tank, 5 Years Element"
+                },
+                features: [
+                    "High-capacity 25-liter storage",
+                    "Advanced insulation technology",
+                    "Corrosion-resistant vitreous enamel coating",
+                    "Magnesium anode rod protection",
+                    "High-density PUF insulation",
+                    "Temperature and pressure relief valve",
+                    "Energy-efficient 4-star rating",
+                    "7-year tank warranty"
+                ]
+            },
+            electronics1: {
+                name: "Smart Extension Board",
+                price: 450,
+                originalPrice: 600,
+                category: "Power Solutions",
+                mainImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp",
+                gallery: [
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp",
+                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portronics-power-plate-13-extension-board-5zxnnhwz6XsdqdV01ChqL45LpYRq5g.webp"
+                ],
+                description: "Revolutionize your power management with our Smart Extension Board Pro. This intelligent power strip features surge protection, USB-C fast charging, and smart home integration for the modern connected lifestyle.",
+                specifications: {
+                    "Socket Count": "6 Universal Sockets",
+                    "USB Ports": "4 (2x USB-A, 2x USB-C)",
+                    "Power Rating": "16A, 250V",
+                    "Surge Protection": "2500 Joules",
+                    "Cable Length": "2 Meters",
+                    "Material": "Fire-Retardant ABS",
+                    "Connectivity": "WiFi 2.4GHz",
+                    "App Control": "iOS & Android",
+                    "Individual Switches": "Yes",
+                    "Warranty": "3 Years"
+                },
+                features: [
+                    "6 universal sockets with individual switches",
+                    "4 USB ports (2x USB-A, 2x USB-C)",
+                    "2500 Joules surge protection",
+                    "Smart home integration capability",
+                    "Mobile app remote control",
+                    "Energy monitoring and usage tracking",
+                    "Fire-retardant ABS construction",
+                    "2-meter heavy-duty cable"
+                ]
+            }
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+            initializeScrollAnimations();
+            initializeNavigation();
+        });
+
+        // Navigation functionality
+        function initializeNavigation() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Update active navigation links on scroll
+            window.addEventListener('scroll', updateActiveNav);
+        }
+
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .category-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Scroll animations
+        function initializeScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Product filtering
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-item');
+            const categoryLinks = document.querySelectorAll('.category-link');
+
+            // Update active category link
+            categoryLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter products with animation
+            products.forEach((product, index) => {
+                if (category === 'all' || product.dataset.category === category) {
+                    setTimeout(() => {
+                        product.style.display = 'block';
+                        product.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                    }, index * 50);
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Search functionality
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+
+            if (searchTerm === '') {
+                products.forEach(product => {
+                    product.style.display = 'block';
+                });
+                return;
+            }
+
+            products.forEach(product => {
+                const title = product.querySelector('.product-title').textContent.toLowerCase();
+                const description = product.querySelector('.product-description').textContent.toLowerCase();
+                const category = product.querySelector('.product-category').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+
+        // Show detailed product view
+        function showDetailedView(productId) {
+            const product = productDatabase[productId];
+            if (!product) return;
+
+            currentDetailProduct = product;
+
+            // Set modal title
+            document.getElementById('detailModalTitle').textContent = product.name;
+
+            // Set main image
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = product.mainImage;
+            mainImage.alt = product.name;
+
+            // Populate gallery
+            const gallery = document.getElementById('productGallery');
+            gallery.innerHTML = '';
+            product.gallery.forEach((imageSrc, index) => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = `${product.name} - Image ${index + 1}`;
+                img.className = 'gallery-image';
+                img.onclick = () => {
+                    mainImage.src = imageSrc;
+                };
+                gallery.appendChild(img);
+            });
+
+            // Populate product details
+            const detailContent = document.getElementById('productDetailContent');
+            detailContent.innerHTML = `
+                <div class="product-category mb-3">${product.category}</div>
+                <h4 class="fw-bold mb-3">${product.name}</h4>
+                <div class="d-flex align-items-center mb-4">
+                    <span class="current-price me-3">₹${product.price.toLocaleString()}</span>
+                    <span class="original-price me-2">₹${product.originalPrice.toLocaleString()}</span>
+                    <span class="product-badge">${Math.round((1 - product.price / product.originalPrice) * 100)}% OFF</span>
+                </div>
+                <p class="text-muted mb-4">${product.description}</p>
+            `;
+
+            // Populate specifications
+            const specsTable = document.getElementById('specificationsTable');
+            specsTable.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Specification</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${Object.entries(product.specifications).map(([key, value]) =>
+                `<tr><td><strong>${key}</strong></td><td>${value}</td></tr>`
+            ).join('')}
+                </tbody>
+            `;
+
+            // Populate features
+            const featuresList = document.getElementById('featuresList');
+            featuresList.innerHTML = product.features.map(feature =>
+                `<li>${feature}</li>`
+            ).join('');
+
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('productDetailModal'));
+            modal.show();
+        }
+
+        // Add to cart functionality
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCartCount();
+
+            // Show success animation
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '✓ Added!';
+            button.style.background = 'var(--success-color)';
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = '';
+            }, 2000);
+
+            showNotification(`${productName} added to cart!`, 'success');
+        }
+
+        function addToCartFromDetailModal() {
+            if (currentDetailProduct) {
+                cart.push({
+                    name: currentDetailProduct.name,
+                    price: currentDetailProduct.price
+                });
+                updateCartCount();
+                showNotification(`${currentDetailProduct.name} added to cart!`, 'success');
+                const modal = bootstrap.Modal.getInstance(document.getElementById('productDetailModal'));
+                modal.hide();
+            }
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty!', 'info');
+                return;
+            }
+
+            let cartItems = 'Your Cart:\n\n';
+            let total = 0;
+            cart.forEach((item, index) => {
+                cartItems += `${index + 1}. ${item.name} - ₹${item.price.toLocaleString()}\n`;
+                total += item.price;
+            });
+            cartItems += `\nTotal: ₹${total.toLocaleString()}`;
+
+            alert(cartItems);
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'} position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 300px;
+                animation: slideInRight 0.3s ease-out;
+            `;
+            notification.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <span class="me-2">${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span>
+                    <span>${message}</span>
+                    <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Email functionality
+        function sendEmail(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            const subject = encodeURIComponent('Contact Form Submission - Harvel Electric');
+            const body = encodeURIComponent(
+                `Name: ${form.querySelector('input[placeholder="Your Name"]').value}\n` +
+                `Email: ${form.querySelector('input[placeholder="Your Email"]').value}\n` +
+                `Phone: ${form.querySelector('input[placeholder="Your Phone"]').value || 'Not provided'}\n` +
+                `Subject: ${form.querySelector('input[placeholder="Subject"]').value}\n\n` +
+                `Message:\n${form.querySelector('textarea').value}`
+            );
+
+            const mailtoLink = `mailto:info@harvelelectric.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+
+            form.reset();
+            showNotification('Email client opened with your message!', 'success');
+        }
+
+        // Enhanced Download price list with complete details
+        function downloadPriceList() {
+            const priceListContent = `
+HARVEL ELECTRIC SOLUTIONS PVT. LTD.
+COMPREHENSIVE PRODUCT CATALOG & PRICE LIST 2024
+=============================================
+
+🏢 COMPANY INFORMATION:
+Company Name: Harvel Electric Solutions Pvt. Ltd.
+Established: 2004 (20+ Years of Excellence)
+Address: 123 Electrical Market, Industrial Area, Phase-2, New Delhi - 110020, India
+Phone: +91 98765 43210 | +91 11 2345 6789
+Email: info@harvelelectric.com | sales@harvelelectric.com
+Website: www.harvelelectric.com
+
+🌀 PREMIUM FANS COLLECTION:
+=============================================
+
+1. PREMIUM CEILING FAN DELUXE
+   Price: ₹2,500 (Original: ₹3,200) - 22% OFF
+   Category: Ceiling Fans
+   Motor Type: BLDC (Brushless DC)
+   Blade Material: Aerodynamic ABS with UV Protection
+   Sweep Size: 52 inches (1320mm)
+   Speed Settings: 6 Variable Speeds
+   Power Consumption: 28W (Maximum)
+   Air Delivery: 230 CMM
+   Noise Level: < 35 dB
+   Remote Control: RF Remote with Timer
+   Warranty: 5 Years Comprehensive
+   Features: Advanced aerodynamic design, whisper-quiet operation, energy-efficient BLDC motor, reversible operation
+
+2. SMART TABLE FAN PRO
+   Price: ₹1,200 (Original: ₹1,500) - 20% OFF
+   Category: Table Fans
+   Motor Type: High-Efficiency AC Motor
+   Blade Material: Reinforced Polymer
+   Blade Diameter: 16 inches (400mm)
+   Speed Settings: 5 Touch Control Speeds
+   Power Consumption: 45W (Maximum)
+   Oscillation: 90° Automatic
+   Connectivity: WiFi 2.4GHz, Bluetooth 5.0
+   App Control: iOS & Android Compatible
+   Timer Function: 1-8 Hours Programmable
+   Warranty: 3 Years
+   Features: IoT connectivity, voice commands, climate adaptation, touch control
+
+3. WALL MOUNT FAN ELITE
+   Price: ₹1,800 (Original: ₹2,200) - 18% OFF
+   Category: Wall Fans
+   Motor Type: Heavy-Duty Induction Motor
+   Blade Material: Metal with Anti-Corrosion Coating
+   Blade Diameter: 18 inches (450mm)
+   Speed Settings: 3 Pull Chain Speeds
+   Power Consumption: 65W
+   Oscillation: 180° Manual Adjustment
+   Tilt Mechanism: Multi-Directional
+   Mounting: Heavy-Duty Wall Bracket
+   Protection: IP44 Rated
+   Warranty: 4 Years
+   Features: Commercial-grade construction, multi-directional tilt, space-saving design
+
+4. INDUSTRIAL EXHAUST FAN
+   Price: ₹950 (Original: ₹1,200) - 21% OFF
+   Category: Exhaust Fans
+   Motor Type: Single Phase Induction
+   Blade Material: Galvanized Steel
+   Blade Diameter: 12 inches (300mm)
+   Air Flow Rate: 1200 CFM
+   Power Consumption: 85W
+   Noise Level: < 45 dB
+   Protection: IP54 Rated
+   Installation: Wall/Window Mount
+   Shutter Type: Automatic Gravity
+   Warranty: 3 Years Motor
+   Features: High-capacity extraction, continuous duty motor, corrosion-resistant
+
+5. GOLDEN CEILING FAN PREMIUM
+   Price: ₹3,200 (Original: ₹4,200) - 25% OFF
+   Category: Ceiling Fans
+   Motor Type: High-Speed Induction Motor
+   Blade Material: Premium Metal with Golden Finish
+   Sweep Size: 48 inches (1220mm)
+   Speed Settings: 4 Variable Speeds
+   Power Consumption: 75W (Maximum)
+   Air Delivery: 220 CMM
+   Finish: Premium Golden Coating
+   Remote Control: Included
+   Warranty: 5 Years Motor, 2 Years Finish
+   Features: Premium golden finish, high-speed motor, decorative design
+
+6. BROWN CEILING FAN CLASSIC
+   Price: ₹2,800 (Original: ₹3,500) - 20% OFF
+   Category: Ceiling Fans
+   Motor Type: Robust Induction Motor
+   Blade Material: High-Grade Metal with Brown Finish
+   Sweep Size: 52 inches (1320mm)
+   Speed Settings: 3 Pull Chain Speeds
+   Power Consumption: 70W (Maximum)
+   Air Delivery: 210 CMM
+   Finish: Classic Brown Coating
+   Warranty: 4 Years Motor
+   Features: Classic brown finish, robust motor, traditional appeal
+
+💡 CFL & LED LIGHTING SOLUTIONS:
+=============================================
+
+7. CFL SPIRAL 20W PREMIUM
+   Price: ₹150 (Original: ₹200) - 25% OFF
+   Category: Energy Savers
+   Wattage: 20W
+   Equivalent Incandescent: 100W
+   Luminous Flux: 1200 Lumens
+   Color Temperature: 2700K (Warm White)
+   Base Type: E27 (Standard Screw)
+   Lifespan: 10,000 Hours
+   Energy Efficiency: 5 Star Rating
+   Mercury Content: < 2.5mg (RoHS Compliant)
+   Instant Start: < 1 Second
+   Warranty: 2 Years
+   Features: 80% energy savings, instant start, mercury-free, flicker-free
+
+8. CFL TUBE LIGHT 40W
+   Price: ₹280 (Original: ₹350) - 20% OFF
+   Category: Tube Lights
+   Wattage: 40W
+   Equivalent Fluorescent: 40W T12
+   Luminous Flux: 2800 Lumens
+   Color Temperature: 6500K (Cool Daylight)
+   Base Type: 2G11 (4-Pin)
+   Tube Length: 22 inches (560mm)
+   Lifespan: 12,000 Hours
+   Power Factor: > 0.95
+   Flicker Rate: < 1%
+   Warranty: 3 Years Commercial
+   Features: Commercial-grade, flicker-free, instant start, uniform distribution
+
+9. LED TUBE LIGHT 18W
+   Price: ₹350 (Original: ₹500) - 30% OFF
+   Category: LED Lights
+   Wattage: 18W
+   Equivalent Fluorescent: 36W T8
+   Luminous Flux: 1800 Lumens
+   Color Temperature: 6000K (Cool White)
+   Base Type: G13 (Bi-Pin)
+   Tube Length: 4 feet (1200mm)
+   Lifespan: 25,000 Hours
+   Power Factor: > 0.9
+   CRI: > 80
+   Warranty: 3 Years
+   Features: 50% energy savings, 25,000-hour lifespan, instant on/off
+
+🔥 WATER HEATING SYSTEMS:
+=============================================
+
+10. SMART ELECTRIC GEYSER 15L
+    Price: ₹8,500 (Original: ₹10,000) - 15% OFF
+    Category: Electric Geysers
+    Capacity: 15 Liters
+    Heating Element: Incoloy 800 (2000W)
+    Tank Material: Stainless Steel 316L
+    Insulation: CFC-Free Polyurethane
+    Temperature Range: 25°C to 75°C
+    Heating Time: 15-20 Minutes
+    Energy Rating: 5 Star BEE
+    Pressure Rating: 8 Bar
+    Safety Features: Multi-Function Valve
+    Warranty: 7 Years Tank, 4 Years Element
+    Features: Smart digital control, app connectivity, energy optimization
+
+11. PREMIUM STORAGE GEYSER 25L
+    Price: ₹12,000 (Original: ₹14,500) - 17% OFF
+    Category: Storage Geysers
+    Capacity: 25 Liters
+    Heating Element: Incoloy 800 (2500W)
+    Tank Material: Vitreous Enamel Coated
+    Insulation: High-Density PUF
+    Temperature Range: 30°C to 75°C
+    Heating Time: 25-30 Minutes
+    Energy Rating: 4 Star BEE
+    Pressure Rating: 8 Bar
+    Anode Rod: Magnesium Sacrificial
+    Warranty: 7 Years Tank, 5 Years Element
+    Features: High-capacity storage, advanced insulation, family size
+
+⚡ SMART ELECTRONICS & ACCESSORIES:
+=============================================
+
+12. SMART EXTENSION BOARD
+    Price: ₹450 (Original: ₹600) - 25% OFF
+    Category: Power Solutions
+    Socket Count: 6 Universal Sockets
+    USB Ports: 4 (2x USB-A, 2x USB-C)
+    Power Rating: 16A, 250V
+    Surge Protection: 2500 Joules
+    Cable Length: 2 Meters
+    Material: Fire-Retardant ABS
+    Connectivity: WiFi 2.4GHz
+    App Control: iOS & Android
+    Individual Switches: Yes
+    Warranty: 3 Years
+    Features: Smart home integration, energy monitoring, surge protection
+
+📞 PROFESSIONAL CONTACT INFORMATION:
+=============================================
+Corporate Headquarters: Harvel Electric Solutions Pvt. Ltd.
+Address: 123 Electrical Market, Industrial Area, Phase-2, New Delhi - 110020, India
+Sales Hotline: +91 98765 43210
+Support: +91 11 2345 6789
+Toll-Free: 1800-123-4567
+Email: info@harvelelectric.com | sales@harvelelectric.com
+Website: www.harvelelectric.com
+
+🕒 BUSINESS HOURS:
+Monday - Saturday: 9:00 AM - 7:00 PM
+Sunday: 10:00 AM - 5:00 PM
+Emergency Support: 24/7 Available
+
+✅ PROFESSIONAL SERVICES INCLUDED:
+✓ All products come with comprehensive manufacturer warranty
+✓ Free professional installation service available
+✓ Bulk order discounts for commercial clients (10-50% additional discount)
+✓ 24/7 expert technical support
+✓ Extended warranty options available
+✓ Energy efficiency consultation
+✓ Custom electrical solutions
+✓ Annual maintenance contracts available
+✓ Product replacement guarantee
+✓ Quality assurance certification
+
+💳 PAYMENT OPTIONS:
+✓ Cash on Delivery (COD)
+✓ Credit/Debit Cards (All major cards accepted)
+✓ UPI & Digital Wallets (PhonePe, Paytm, Google Pay)
+✓ Bank Transfer (NEFT/RTGS)
+✓ EMI Options Available (0% interest on select products)
+✓ Corporate Credit Terms (30-90 days)
+✓ Cryptocurrency payments accepted
+
+🚚 DELIVERY & INSTALLATION:
+✓ Same-day delivery in metro cities (Delhi, Mumbai, Bangalore, Chennai)
+✓ Express delivery nationwide (24-48 hours)
+✓ Professional installation team available
+✓ Post-installation support and maintenance
+✓ Warranty registration assistance
+✓ Product demonstration included
+✓ Free packaging and handling
+✓ Insurance coverage during transit
+
+🏆 CERTIFICATIONS & AWARDS:
+✓ ISO 9001:2015 Quality Management
+✓ ISO 14001:2015 Environmental Management
+✓ BEE Star Rating Certified Products
+✓ CE Marking for European Standards
+✓ RoHS Compliance Certificate
+✓ Best Electrical Retailer Award 2023
+✓ Customer Choice Award 2022-2024
+✓ Green Business Certification
+
+📊 BULK ORDER PRICING:
+Quantity 10-50 units: Additional 10% discount
+Quantity 51-100 units: Additional 20% discount
+Quantity 101-500 units: Additional 30% discount
+Quantity 500+ units: Additional 40% discount
+Institutional orders: Special pricing available
+
+🔄 RETURN & EXCHANGE POLICY:
+✓ 30-day return policy on all products
+✓ 7-day exchange policy for defective items
+✓ Full refund if not satisfied
+✓ Free pickup for returns/exchanges
+✓ No questions asked return policy
+✓ Instant replacement for manufacturing defects
+
+Visit our website or showroom for detailed product demonstrations!
+Prices valid until December 31, 2024. Terms & conditions apply.
+For latest updates and offers, follow us on social media.
+
+© 2024 Harvel Electric Solutions Pvt. Ltd. All rights reserved.
+            `;
+
+            // Create and download file
+            const blob = new Blob([priceListContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Harvel_Electric_Complete_Catalog_2024.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            showNotification('Complete product catalog downloaded successfully! 📄', 'success');
+        }
+
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
